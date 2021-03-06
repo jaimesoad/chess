@@ -13,12 +13,33 @@ body {
 }
 
 .square {
-    height: 75px;
-    width: 75px;
+    height: 70px;
+    width: 70px;
     border: 2px solid black;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: monospace;
+}
+
+p {
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav h2 {
+    margin: 10px 20px;
+    color: white;
+    font-family: monospace;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+nav h2:hover {
+    background-color: rgb(23, 61, 110);
 }
