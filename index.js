@@ -1,9 +1,12 @@
 "use strict";
 
 
+let outX = 0, outY = 0;
+
+
 class ficha{
     constructor(){
-        this.x = 0, this.y = 0;
+        this.x = outX, this.y = outY;
         this.posicion = document.getElementById(`${this.x}-${this.y}`).innerHTML;
         this.movDisp = [];
         this.path = this.posicion;
@@ -210,8 +213,15 @@ class pawn extends ficha{
             arrayPos++;
         }
         
-        for(let element of this.movDisp){
-            element.style.backgroundColor = "gold";
+        if(y == 7){
+            morph.style.display = "block";
+            outX = this.x;
+            outY = this.y;
+        }else{
+            for(let element of this.movDisp){
+                element.style.backgroundColor = "gold";
+            }
+
         }
     }
 }
@@ -326,66 +336,5 @@ const render = () => {
 }
 render();
 
-/* let movDisp = [];
-
-function find(x, y){
-    let arrayPos = 0;
-    movDisp.length = 0;
-    render();
-    document.getElementsByClassName(`fila-${y}`)[x].style.backgroundColor = "green";
-
-    if(x + 2 <= 7 && y - 1 >= 0){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y - 1}`)[x + 2];
-        arrayPos++;
-    }
-    if(x + 2 <= 7 && y + 1 <= 7){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y + 1}`)[x + 2];
-        arrayPos++;
-    }
-    if(x + 1 <= 7 && y - 2 >= 0){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y - 2}`)[x + 1];
-        arrayPos++;
-    }
-    if(x + 1 <= 7 && y + 2 <= 7){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y + 2}`)[x + 1];
-        arrayPos++;
-    }
-    if(x - 1 >= 0 && y - 2 >= 0){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y - 2}`)[x - 1];
-        arrayPos++;
-    }
-    if(x - 1 >= 0 && y + 2 <= 7){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y + 2}`)[x - 1];
-        arrayPos++;
-    }
-    if(x - 2 >= 0 && y - 1 >= 0){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y - 1}`)[x - 2];
-        arrayPos++;
-    }
-    if(x - 2 >= 0 && y + 1 <= 7){
-        movDisp[arrayPos] = document.getElementsByClassName(`fila-${y + 1}`)[x - 2];
-    }
-
-    for(let element of movDisp){
-        element.style.backgroundColor = "gold";
-    }
-}
-
-function move(x, y){
-    for(let element of movDisp){
-        if(element == document.getElementsByClassName(`fila-${y}`)[x]){
-            find(x, y);
-            knight = element;
-            posicion = document.getElementById(`${x}-${y}`).innerHTML;
-            path = `${path}, ${posicion}`;
-            console.log(`${posicion}: (${x}, ${y})`);
-        }
-    }
-}
-
-let knight = document.getElementsByClassName("fila-0")[0];
-let posicion = document.getElementById("0-0").innerHTML;
-let path = posicion;
-find(0, 0); */
-
 let piece = new knight;
+let morph = document.getElementById("Morph");

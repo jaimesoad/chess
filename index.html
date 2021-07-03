@@ -8,13 +8,28 @@
 </head>
 <body>
     <nav>
-        <h2 onclick="piece = new bishop">Bishop</h2>
-        <h2 onclick="piece = new king">King</h2>
-        <h2 onclick="piece = new knight">Knight</h2>
-        <h2 onclick="piece = new pawn">Pawn</h2>
-        <h2 onclick="piece = new queen">Queen</h2>
-        <h2 onclick="piece = new tower">Tower</h2>
+        <h2 onclick="outX = 0; outY = 0; piece = new bishop">Bishop</h2>
+        <h2 onclick="outX = 0; outY = 0; piece = new king">King</h2>
+        <h2 onclick="outX = 0; outY = 0; piece = new knight">Knight</h2>
+        <h2 onclick="outX = 0; outY = 0; piece = new pawn">Pawn</h2>
+        <h2 onclick="outX = 0; outY = 0; piece = new queen">Queen</h2>
+        <h2 onclick="outX = 0; outY = 0; piece = new tower">Tower</h2>
     </nav>
+
+    <div id="Morph">
+        <div>
+            <h1>Morph!</h2>
+        </div>
+        <div>
+            <h2 onclick="piece = new bishop; morph.style.display = 'none'">Bishop</h2>
+            <h2 onclick="piece = new knight; morph.style.display = 'none'">Knight</h2>
+        </div>
+        <div>
+            <h2 onclick="piece = new queen; morph.style.display = 'none'">Queen</h2>
+            <h2 onclick="piece = new tower; morph.style.display = 'none'">Tower</h2>
+        </div>
+
+    </div>
 
     <script src="index.js"></script>
 </body>

@@ -43,3 +43,41 @@ nav h2 {
 nav h2:hover {
     background-color: rgb(23, 61, 110);
 }
+
+#Morph {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(247, 166, 166, 0.473);
+    height: fit-content;
+    width: 500px;
+    border-radius: 20px;
+    padding: 10px;
+    backdrop-filter: blur(15px);
+    display: none;
+}
+
+#Morph div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#Morph h2 {
+    text-align: center;
+}
+
+#Morph div :is(h1, h2){
+    width: fit-content;
+    margin: 8px 20px;
+    color: white;
+    font-family: monospace;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#Morph div h2:hover {
+    background-color: rgba(247, 166, 166, 0.281);
+    
+}
